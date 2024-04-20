@@ -30,12 +30,38 @@ export default function Hero() {
       <div className="container-md" data-aos='fade-in'>
         <div className="row">
           <div className="col-12">
-            <Swiper>
+            <Swiper
+            slidesPerView={"auto"}
+            speed={500}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false
+            }}
+            pagination={{
+              el: '.swiper-pagination',
+              type: 'bullets',
+              clickable: true
+            }}
+            navigation={{
+              nextEl: '.custom-swiper-button-next',
+              prevEl: '.custom-swiper-button-prev'
+            }}
+            modules={[Autoplay, Pagination, Navigation]}
+            loop={true}
+            className='sliderFeaturedPosts'
+            >
               {heroSlides.map(slide => (
                 <SwiperSlide>
                 <HeroSlide slide={slide}/>
                 </SwiperSlide>
               ))}
+              <div className="custom-swiper-button-next">
+                <span className="bi-chevron-left"></span>
+              </div>
+              <div className="custom-swiper-button-prev">
+                <span className="bi-chevron-right"></span>
+              </div>
+              <div className="swiper-pagination"></div>
             </Swiper>
           </div>
         </div>

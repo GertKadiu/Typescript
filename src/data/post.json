@@ -24,10 +24,10 @@
     "category": "Food",
     "title": "How to Avoid Distraction and Stay Focused During Video Calls?",
     "brief": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero temporibus repudiandae, inventore pariatur numquam cumque possimus exercitationem? Nihil tempore odit ab minus eveniet praesentium, similique blanditiis molestiae ut saepe perspiciatis officia nemo, eos quae cumque. Accusamus fugiat architecto rerum animi atque eveniet, quo, praesentium dignissimos",
-    "avatar": "",
-    "author": "",
+    "avatar": "assets/img/person-2.jpg",
+    "author": "Gert kadiu",
     "top": false,
-    "trending": false
+    "trending": true
   },
   {
     "img": "assets/img/post-landscape-7.jpg",
