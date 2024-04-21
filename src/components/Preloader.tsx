@@ -3,7 +3,7 @@ import "./preloader.css"
 
 export default function () {
   return (
-    <div>
+    <div className='preloader'>
       
     </div>
   )

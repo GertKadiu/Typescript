@@ -17,7 +17,7 @@ export interface PostProps {
   brief: string;
 }
 
-const initialPost = {
+export const initialPost = {
   _id: '',
   img:  '',
   category:  '',
