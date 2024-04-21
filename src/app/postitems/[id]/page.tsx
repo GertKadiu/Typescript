@@ -55,9 +55,9 @@ export default function PostItem({ params }: { params: { id: string } }) {
             <section className="single-post-content">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-9 post-content">
+                        <div  className="col-md-9 post-content">
                             {item ? (<div className="single-post">
-                                <div className="post-meta">
+                                <div  className="post-meta">
                                     <span className="date">{item.category}</span>
                                     <span className="mx-1">
                                         <i className="bi bi-dot"></i>

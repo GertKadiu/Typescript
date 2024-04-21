@@ -5,7 +5,6 @@ import React, {useEffect, useState} from 'react'
 import { PostProps } from '@/sections/Posts'
 import PostItemOne from '@/components/PostItemOne'
 import PageTitle from '@/components/PageTitle'
-import { title } from 'process'
 
 export default function PostItems() {
 
