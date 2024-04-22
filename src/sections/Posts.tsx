@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import PostItemOne from '@/components/PostItemOne';
 import TrendingPost from '@/components/TrendingPost';
 import Preloader from '@/components/Preloader';
-// import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation';
 
 export interface PostProps {
   _id: string;
@@ -30,15 +30,15 @@ export const initialPost = {
 
 export default function Posts() {
 
-  // const router = useRouter()
+  const router = useRouter()
   const [items, setItems] = useState([])
   const [item, setItem] = useState(initialPost)
 
   const getSinglePostData = (id: string) => {
-    fetch(`/api.postitems/${id}`)
+    fetch(`/api/postitems/${id}`)
       .then(res => {
         if (res.status === 404) {
-          // router.push('/not-found')
+          router.push('/not-found')
         }
         return res.json()
       })

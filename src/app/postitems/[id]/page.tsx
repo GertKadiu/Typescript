@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react'
 import { initialPost } from '@/sections/Posts'
 import "./style.css"
-import Image from 'next/image'
 import Preloader from '@/components/Preloader'
 import { PostProps } from '@/sections/Posts'
 import SidePostItem from '@/components/SidePostItem'
