@@ -2,9 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 
-export default function CreatePostItem() {
-
-    const intialState = {
+export const initialState = {
         title: '',
         img: '',
         category: '',
@@ -13,7 +11,11 @@ export default function CreatePostItem() {
         validate: '',
     };
 
-    const [text, setText] = useState(intialState)
+export default function CreatePostItem() {
+
+   
+
+    const [text, setText] = useState(initialState)
 
     const handleTextChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
         const { name, value } = e.target;

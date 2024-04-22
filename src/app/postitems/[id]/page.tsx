@@ -7,11 +7,13 @@ import Image from 'next/image'
 import Preloader from '@/components/Preloader'
 import { PostProps } from '@/sections/Posts'
 import SidePostItem from '@/components/SidePostItem'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 
 export default function PostItem({ params }: { params: { id: string } }) {
     const id: string = params.id
-
+    const router = useRouter()
     const [item, setItem] = useState(initialPost)
     const [items, setItems] = useState([])
 
@@ -49,6 +51,24 @@ export default function PostItem({ params }: { params: { id: string } }) {
         getItemsData()
     }, [])
 
+    const handleDeletePost = async(id: string) => {
+        // Delete Post request
+        try {
+            const respone = await fetch(`/api/postitems/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'applicatin/json',
+                },
+            });
+            const result = respone.status;
+            if (result === 200){
+                console.log('Success', result)
+                router.push(`/postitems`)
+            }
+        } catch (error) {
+            console.log('Error', error)
+        }
+    }
 
     return (
         <main id="main">
@@ -101,7 +121,14 @@ export default function PostItem({ params }: { params: { id: string } }) {
                                     Aspernatur non omnis eligendi est nam earum, veniam repudiandae debitis ducimus nisi repellat,
                                     recusandae assumenda,
                                     commodi necessitatibus vero facilis illo eius aperiam!</p>
-                            </div>) : <Preloader />}
+                                    <div className="d-flex justify-content-center gap-4">
+                                        <a className='btn btn-primary' onClick={()=> handleDeletePost(id)}>
+                                        <i className="bi bi-trash"></i>
+                                        </a>
+                                        <Link href={`/createpostitems/${id}`} className='btn btn-primary'><i className="bi bi-pen"></i></Link>
+                                    </div>
+                            </div>)
+                             : <Preloader />}
                         </div>
                         <div className="col-md-3">
                             <div className="aside-block">
